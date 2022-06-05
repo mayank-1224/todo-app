@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+body {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 20px;
+    background-color: hsl(235, 21%, 11%);
+}
+
+.bg {
+    background: url("images/bg-desktop-dark.jpg") no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 40vh;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+    margin: -250px auto 0 auto;
+}
+
+.app-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+h1 {
+    color: white;
+    letter-spacing: 20px;
+}
+
+.app-name img {
+    cursor: pointer;
+    height: 35px;
+}
+
+label {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.tasks {
+    position: relative;
+    display: flex;
+}
+
+.tasks button {
+    border: 1px solid hsl(234, 11%, 52%);
+    outline: none;
+    background: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    align-self: center;
+    margin-left: 15px;
+}
+
+.tasks input {
+    width: 100%;
+    background-color: hsl(235, 24%, 19%);
+    height: 50px;
+    font-size: 1rem;
+    color: hsl(233, 11%, 84%);
+    padding: 10px 10px 10px 45px;
+    border: none;
+    border-radius: 8px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.filter {
+    display: flex;
+}
+
+.filter label:hover {
+    color: blue
+}
+
+.todo-list ul {
+    margin-top: 25px;
+}
+
+.todo-list ul li {
+    width: 100%;
+    background-color: hsl(235, 24%, 19%);
+    height: 50px;
+    font-size: 1rem;
+    color: hsl(233, 11%, 84%);
+    padding: 15px;
+    border-bottom: 1px solid hsl(233, 18%, 38%);
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li.hidden {
+    display: none;
+}
+
+.todo-list input {
+    -webkit-appearance: none;
+    border: 1px solid hsl(234, 11%, 52%);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.todo-list input:checked {
+    background: url('images/icon-check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+}
+
+.todo-list input:checked~.text {
+    text-decoration: line-through;
+    color: hsl(234, 11%, 52%);
+}
+
+.remove {
+    background: url('images/icon-cross.svg') no-repeat;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    display: none;
+}
+
+ul li:hover .remove {
+    display: block;
+}
+
+.counter {
+    color: hsl(233, 14%, 35%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: hsl(235, 24%, 19%);
+    height: 50px;
+    font-size: 1rem;
+    color: hsl(234, 11%, 52%);
+    padding: 15px;
+    border-radius: 0 0 8px 8px;
+}
+
+.clear {
+    cursor: pointer;
+}
+
+.clear:hover {
+    color: hsl(236, 33%, 92%);
+}
+
+.initial-counter {
+    display: none;
+}
+
+@media(max-width:600px) {
+    .clear,
+    .count {
+        display: none;
+    }
+
+    .bg {
+        background: url("images/bg-mobile-dark.jpg") no-repeat;
+        background-size: cover;
+        height: 35vh;
+    }
+
+    .content {
+        width: 90%;
+    }
+
+    .app-name h1 {
+        font-size: 1.5rem;
+    }
+
+    .filter {
+        margin: auto;
+    }
+
+    .counter {
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+
+    .initial-counter {
+        color: hsl(233, 14%, 35%);
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: hsl(235, 24%, 19%);
+        height: 50px;
+        font-size: 1rem;
+        color: hsl(234, 11%, 52%);
+        padding: 15px;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .in-clear {
+        cursor: pointer;
+    }
+
+    .in-clear:hover {
+        color: hsl(236, 33%, 92%);
+    }
+
+    body.light .initial-counter {
+        background-color: hsl(0, 0%, 98%);
+        color: hsl(236, 9%, 61%);
+    }
+
+    body.light .bg {
+        background: url("images/bg-mobile-light.jpg") no-repeat;
+        background-size: cover;
+    }
+
+    body.light .in-clear:hover {
+        color: hsl(235, 19%, 35%);
+    }
+}
