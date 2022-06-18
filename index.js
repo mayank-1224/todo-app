@@ -1,12 +1,9 @@
-/* Count Items left */
 const itemCount = document.querySelector('.count span');
 const mobCount = document.querySelector('.icount span');
 
 itemCount.innerText = document.querySelectorAll('.list').length;
 mobCount.innerText = document.querySelectorAll('.list').length;
 
-
-/* Change Theme */
 const themeIcon = document.querySelector('.chng');
 
 themeIcon.addEventListener('click',()=>{
@@ -18,7 +15,6 @@ themeIcon.addEventListener('click',()=>{
     }
 })
 
-/*Add items */
 const addButton = document.querySelector('.tasks button');
 const itemInput = document.getElementById('tasks');
 const todo = document.querySelector('.todo-list ul');
@@ -59,7 +55,6 @@ function updateCount(num) {
     itemCount.innerText = +itemCount.innerText + num;
 }
 
-/*remove items */
 function removeItems(item){
     item.remove();
     updateCount(-1);
@@ -71,7 +66,6 @@ todo.addEventListener('click',(event)=>{
     }
 })
 
-/*Filters */
 document.querySelectorAll('.filter input').forEach(radio =>{
     radio.addEventListener('change',(event)=>{
         filterTodo(event.target.id);
@@ -108,8 +102,6 @@ function filterTodo(id){
             break;
     }
 }
-
-/*clear items */
 const clear = document.querySelector('.clear');
 const mobClear = document.querySelector('.in-clear');
 
