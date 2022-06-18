@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -86,13 +88,20 @@ label {
 .filter {
     display: flex;
 }
+.filter input[type="radio"]{
+    opacity: 0;
+}
 
 .filter label:hover {
-    color: blue
+    color: blue;
+}
+.filter input[type="radio"]:checked ~ span{
+    color:hsl(220, 98%, 61%);
 }
 
 .todo-list ul {
     margin-top: 25px;
+    border-top-left-radius: 8px;
 }
 
 .todo-list ul li {
@@ -168,7 +177,7 @@ ul li:hover .remove {
 
 body.light {
     color: white;
-    background-color: rgb(250, 246, 246);
+    
 }
 
 body.light .tasks input {
@@ -277,3 +286,9 @@ body.light .clear:hover {
         color: hsl(235, 19%, 35%);
     }
 }
+
+body {
+    font-size: 18px;
+    font-family: "Josefin Sans", sans-serif;
+    background-color: hsl(235, 21%, 11%);
+  }
